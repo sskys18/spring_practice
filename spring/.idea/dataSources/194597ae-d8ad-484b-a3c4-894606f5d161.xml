@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@UMC">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.49">
-    <root id="1"/>
+    <root id="1">
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.0.34</ServerVersion>
+    </root>
     <collation id="2" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
       <DefaultForCharset>1</DefaultForCharset>
@@ -917,8 +921,8 @@
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="293" parent="1" name="study">
-      <IntrospectionTimestamp>2023-11-21.05:26:49</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-20.11:26:49</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-12-04.22:09:31</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-04.04:09:31</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="294" parent="1" name="mysql.infoschema">
@@ -1007,7 +1011,7 @@
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="314" parent="299" name="member_id">
+    <column id="314" parent="299" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1027,8 +1031,7 @@
       <Position>4</Position>
     </column>
     <column id="318" parent="299" name="email">
-      <DasType>varchar(50)|0s</DasType>
-      <NotNull>1</NotNull>
+      <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="319" parent="299" name="gender">
@@ -1063,7 +1066,7 @@
       <Position>12</Position>
     </column>
     <index id="326" parent="299" name="PRIMARY">
-      <ColNames>member_id</ColNames>
+      <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
@@ -1096,7 +1099,7 @@
     </column>
     <foreign-key id="333" parent="300" name="FKidc8ol6y753cph4vuq9fa9scd">
       <ColNames>member_id</ColNames>
-      <RefColNames>member_id</RefColNames>
+      <RefColNames>id</RefColNames>
       <RefTableName>member</RefTableName>
     </foreign-key>
     <foreign-key id="334" parent="300" name="FKg33d9g6nwdsilmn85of0tt35q">
@@ -1150,7 +1153,7 @@
     </column>
     <foreign-key id="345" parent="301" name="FKpgw7uojmq1tkna2ubpxmhlyuo">
       <ColNames>member_id</ColNames>
-      <RefColNames>member_id</RefColNames>
+      <RefColNames>id</RefColNames>
       <RefTableName>member</RefTableName>
     </foreign-key>
     <foreign-key id="346" parent="301" name="FKibnub11mc8k2g39v44smt9jqi">
@@ -1205,7 +1208,7 @@
     </foreign-key>
     <foreign-key id="357" parent="302" name="FKt0mtbhxwyh98gfwit7uvynexi">
       <ColNames>member_id</ColNames>
-      <RefColNames>member_id</RefColNames>
+      <RefColNames>id</RefColNames>
       <RefTableName>member</RefTableName>
     </foreign-key>
     <index id="358" parent="302" name="PRIMARY">
@@ -1335,7 +1338,7 @@
     </column>
     <foreign-key id="386" parent="305" name="FKk0ccx5i4ci2wd70vegug074w1">
       <ColNames>member_id</ColNames>
-      <RefColNames>member_id</RefColNames>
+      <RefColNames>id</RefColNames>
       <RefTableName>member</RefTableName>
     </foreign-key>
     <foreign-key id="387" parent="305" name="FK74d12ba8sxxu9vpnc59b43y30">
